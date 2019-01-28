@@ -10,8 +10,9 @@ from datetime import datetime
 import threading
 import queue
 import pdb
+from multiprocessing import Process, Queue
 
-message_queue = queue.Queue()
+message_queue = Queue()
 
 bus = SystemBus()
 signal_listen = bus.get('org.asamk.Signal')
@@ -23,15 +24,16 @@ def send_worker(message_queue):
     while True:
         try:
             number, message = message_queue.get()
+            print("Send thread: {} {}".format(repr(number), repr(message)))
         except queue.Empty:
             print("Empty queue")
             return
 
-        print("Send thread: {} {}".format(repr(number), repr(message)))
-        send_message(number, message)
-        message_queue.task_done()
+        # send_message(number, message)
+        # message_queue.task_done()
 
 def send_message(number, message):
+    print("sending message")
     signal_send.sendMessage(message, [], number)
     return 0
 
@@ -45,7 +47,7 @@ def message_callback(timestamp, source, groupID, message, attachments):
     # parse the message to check for strings
     if message == 'help':
         # send a message back on the bus 
-        # message_queue.put((source, "Return help section"))
+        message_queue.put((source, "Return help section"))
         pass
     
     return 0
@@ -86,7 +88,7 @@ if __name__ == "__main__":
         # t.start()
         send_message(number, message)
     elif args.receive:
-        send_thread = threading.Thread(target=send_worker, args=(message_queue,))
+        send_thread = Process(target=send_worker, args=(message_queue,))
         send_thread.daemon = True
         send_thread.start()
         listen()

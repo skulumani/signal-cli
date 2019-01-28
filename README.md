@@ -44,6 +44,12 @@
     pip3 install --user pydbus
     ~~~
 
+## Conda installation
+
+conda install -c conda-forge pygobject
+pip install --user pydbus
+conda install -c anaconda zeromq
+
 ## Documentation
 
 https://github.com/AsamK/signal-cli/wiki/DBus-service
