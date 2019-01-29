@@ -16,11 +16,13 @@ message_queue = queue.Queue()
 bus = SystemBus()
 signal_listen = bus.get('org.asamk.Signal')
 signal_send = SystemBus().get('org.asamk.Signal')
+send_messages_flag = True
 
 def send_worker(message_queue):
     """Send messages from the queue over a different bus to sending client
     """
-    while True:
+
+    while send_messages_flag:
         try:
             number, message = message_queue.get()
             signal_send.sendMessage(message, [] , [number])
@@ -62,7 +64,7 @@ def listen():
         loop.run()
     except KeyboardInterrupt:
         loop.quit()
-
+    send_messages_flag = False
 
 # signal.sendGroupMessage(data, [], [___GROUP___])
 # replace ___GROUP___ with byte-representation of 
