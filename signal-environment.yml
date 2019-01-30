@@ -1,0 +1,12 @@
+name: signal-cli
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python=3
+  # - pygobject   
+  - pip:
+    - pydbus
+    - pyzmq
+    
