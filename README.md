@@ -9,7 +9,7 @@
     To link to another device type
 
     ~~~
-    signal-cli -u +1number link -n NAME
+    signal-cli link -n NAME
     ~~~
     
     This will provide a link to a QR code you can generate by going to https://zxing.appspot.com/generator and choosing a basic Text QR code.
