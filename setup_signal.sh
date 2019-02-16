@@ -32,16 +32,16 @@ else
     echo "Link already exists"
 fi
 
-sudo apt-get install default-jre
-sudo apt-get install libunixsocket-java
+# sudo apt-get install default-jre
+# sudo apt-get install libunixsocket-java
 
 # now setup Signal dbus 
 # sudo useradd signal-cli
 
 # copy files to system-d
-sudo cp dotfiles/signal-cli/org.asamk.Signal.conf /etc/dbus-1/system.d/
-sudo cp dotfiles/signal-cli/org.asamk.Signal.service /usr/share/dbus-1/system-services/
-sudo cp dotfiles/signal-cli/signal.service /etc/systemd/system/
+sudo cp org.asamk.Signal.conf /etc/dbus-1/system.d/
+sudo cp org.asamk.Signal.service /usr/share/dbus-1/system-services/
+sudo cp signal.service /etc/systemd/system/
 
 sudo systemctl daemon-reload
 sudo systemctl enable signal.service
