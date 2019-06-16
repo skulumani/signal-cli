@@ -3,6 +3,11 @@
 1. Run build_scripts/setup_signal.sh
     
     This will download and install signal to `/opt/signal-cli`, get JRE and setup some files for dbus support
+    
+    ~~~
+    sudo apt-get install default-jre
+    sudo apt-get install libunixsocket-java
+    ~~~
 
 2. Register a phone number with the `signal-cli` instance
 
