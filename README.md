@@ -40,7 +40,7 @@ Modify `signal.service` to `User=<pi or shankar>`
     ~~~
 
     ~~~
-    signal-cli -u +12029305414 -m "message" "recipient"
+    signal-cli -u +12029305414 send -m "message" "recipient"
     ~~~
 
     ~~~
@@ -50,7 +50,7 @@ Modify `signal.service` to `User=<pi or shankar>`
     Or can send using dbus directly as
 
     ~~~
-    dbus-send --system --type=method_call --print-reply --dest="org.asamk.Signal" /org/asamk/Signal org.asamk.Signal.sendMessage string:MessageText array:string: string:RECIPIENT
+    dbus-send --system --type=method_call --print-reply --dest="org.asamk.Signal" /org/asamk/Signal org.asamk.Signal.sendMessage string:"MESSAGE" array:string: string:"number"
     ~~~
 
 4. There is a python script that also provides some dbus support. You need `pydbus`
