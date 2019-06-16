@@ -37,6 +37,14 @@
     signal-send +NUMBER "MESSAGE"
     ~~~
 
+    ~~~
+    signal-cli -u +12029305414 -m "message" "recipient"
+    ~~~
+
+    ~~~
+    signal-cli -u +12029305414 receive
+    ~~~
+
     Or can send using dbus directly as
 
     ~~~
