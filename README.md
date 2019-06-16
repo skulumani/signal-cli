@@ -1,5 +1,7 @@
 ## Setting up Signal 
 
+Modify `signal.service` to `User=<pi or shankar>`
+
 1. Run build_scripts/setup_signal.sh
     
     This will download and install signal to `/opt/signal-cli`, get JRE and setup some files for dbus support
