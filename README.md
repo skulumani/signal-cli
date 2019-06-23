@@ -2,6 +2,16 @@
 
 Modify `signal.service` to `User=<pi or shankar>`
 
+## Installation
+
+https://pygobject.readthedocs.io/en/latest/getting_started.html#ubuntu-getting-started
+
+~~~
+sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0
+pip install pycairo
+pip install PyGObject
+~~~
+
 1. Run build_scripts/setup_signal.sh
     
     This will download and install signal to `/opt/signal-cli`, get JRE and setup some files for dbus support
