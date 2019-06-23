@@ -8,8 +8,8 @@ After=network-online.target
 [Service]
 Type=dbus
 Environment="SIGNAL_CLI_OPTS=-Xms2m"
-ExecStart=/opt/signal-cli/bin/signal-cli -u +12029305414 daemon --system
-User=shankar
+ExecStart=/usr/local/bin/signal-cli -u +12029305414 daemon --system
+User=homeassistant
 BusName=org.asamk.Signal
 
 [Install]
