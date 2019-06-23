@@ -7,9 +7,12 @@ Modify `signal.service` to `User=<pi or shankar>`
 https://pygobject.readthedocs.io/en/latest/getting_started.html#ubuntu-getting-started
 
 ~~~
-sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0
+sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config gir1.2-gtk-3.0
+sudo -u homeassistant -H -s
+source /srv/homeassistant/bin/activate
 pip install pycairo
 pip install PyGObject
+pip install pydbus
 ~~~
 
 1. Run build_scripts/setup_signal.sh
