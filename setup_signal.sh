@@ -1,6 +1,6 @@
 # Download and setup Signal-Cli
 
-SIGNAL_VERSION="0.6.2"
+SIGNAL_VERSION="0.6.5"
 SIGNAL_FNAME="signal-cli-${SIGNAL_VERSION}.tar.gz"
 SIGNAL_LINK="https://github.com/AsamK/signal-cli/releases/download/v${SIGNAL_VERSION}/${SIGNAL_FNAME}"
 SIGNAL_DIR="/opt/signal-cli"
